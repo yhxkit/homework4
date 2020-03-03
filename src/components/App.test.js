@@ -6,7 +6,7 @@ import Profile from './Profile';
 import Fortune from './Fortune';
 import {MemoryRouter} from 'react-router';
 
-jest.mock('./Main', () => {return ((props) => <div id="main"> MKake </div>);});
+jest.mock('./Main', () => {return ((props) => <div id="main"> MockMain </div>);});
 jest.mock('./Profile', () => () => 'mock');
 jest.mock('./Fortune', () => () => 'mock');
 
