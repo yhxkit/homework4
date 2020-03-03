@@ -16,6 +16,16 @@ describe('App', () => {
     const wrapper = component.find(".App");
     expect(wrapper.length).toBe(1);
   });
+  
+  it ('should render main with "/main"', () => {
+    const component = mount(
+      <MemoryRouter initialEntries={['/main']}>
+      <App/>
+      </MemoryRouter>
+    );
+    expect(component.find(Main)).toHaveLength(1);
+    expect(component.find('#main').length).toBe(1);
+  });
 
   it ('should goto main when clicking main link', () => {
     const component = mount(
@@ -29,15 +39,6 @@ describe('App', () => {
     expect(component.find(Main)).toHaveLength(1);
   });
 
-  it ('should render main with "/main"', () => {
-    const component = mount(
-      <MemoryRouter initialEntries={['/main']}>
-      <App/>
-      </MemoryRouter>
-    );
-    expect(component.find(Main)).toHaveLength(1);
-    expect(component.find('#main').length).toBe(1);
-  });
 
   it ('should render profile with "/profile"', () => {
     const component = mount(
