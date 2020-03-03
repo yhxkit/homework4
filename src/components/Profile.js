@@ -10,7 +10,7 @@ class Profile extends Component {
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      name: value
     });
   };
 
@@ -22,7 +22,7 @@ class Profile extends Component {
         <h1>Tell us about you</h1>
           <input
             id="username-input"
-            name="username"
+            name="name"
             placeholder="username"
             value={username}
             onChange={this.handleChange}
