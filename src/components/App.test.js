@@ -27,9 +27,18 @@ describe('App', () => {
     expect(component.find('#main').length).toBe(1);
   });
 
+  it ('should render profile with "/profile"', () => {
+    const component = mount(
+      <MemoryRouter initialEntries={['/profile']}>
+      <App/>
+      </MemoryRouter>
+    );
+    expect(component.find(Profile)).toHaveLength(1);
+  });
+
   it ('should goto main when clicking main link', () => {
     const component = mount(
-      <MemoryRouter initialEntries={['/signup']}>
+      <MemoryRouter initialEntries={['/foo']}>
       <App/>
       </MemoryRouter>
     );
@@ -39,15 +48,6 @@ describe('App', () => {
     expect(component.find(Main)).toHaveLength(1);
   });
 
-
-  it ('should render profile with "/profile"', () => {
-    const component = mount(
-      <MemoryRouter initialEntries={['/profile']}>
-      <App/>
-      </MemoryRouter>
-    );
-    expect(component.find(Profile)).toHaveLength(1);
-  });
 
   it ('should render fortune with "/fortune/..."', () => {
     const component = mount(
