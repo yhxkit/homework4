@@ -38,6 +38,19 @@ describe("Profile", () => {
 
   it("should handle display link with username & birthday has been entered", () => {
     //TODO
-    expect(true).toBe(false);
+    // expect(true).toBe(true);
+    const username = "ta";
+    const birthday = "1993-10-10";
+    const component = shallow(<Profile />);
+    const wrapper1 = component.find("#username-input");
+    const wrapper2 = component.find("#birthday-input");
+
+    wrapper1.simulate("change", {
+      target: { value: username, name: wrapper1.props().name }
+    });
+    wrapper2.simulate("change", {
+      target: { value: birthday, name: wrapper2.props().name }
+    });
+    expect(component.contains("show my fortune")).toBe(true);
   });
 });
